@@ -6,3 +6,6 @@
 		color: orange !important;
 		font-style: italic !important;
 }
+#main {
+	min-height: 700px;
+}
