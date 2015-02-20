@@ -52,6 +52,9 @@
 		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
 		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
 
+		<!-- DYGRAPH -->
+		<script src="js/plugin/dygraphs/dygraph-combined.min.js"></script>
+
 	</head>
 	
 	<!--
@@ -258,7 +261,7 @@
 				<ol class="breadcrumb">
 					<li><a href="index.html">Sasaran</a></li>
 					<li><a href="page-pembangunan-sektor-unggulan.html">Sasaran Pembangunan Sektor Unggulan</a></li>
-					<li><a href="page-kedaulatan-pangan.html">Kedaulatan Pangan</a></li>
+					<li><a href="page-prioritas-kedaulatan-pangan.html">Kedaulatan Pangan</a></li>
 					<li class="active">Produksi Dalam Negeri</li>
 				</ol>
 				<!-- end breadcrumb -->
@@ -302,7 +305,7 @@
 					<div class="row">
 						<article class="col-xs-12 col-sm-6 col-md-6 col-lg-6 sortable-grid ui-sortable">
 							<!-- new widget -->
-							<div class="jarviswidget" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+							<div class="jarviswidget" id="wid-id-1" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
@@ -324,7 +327,231 @@
 								<!-- widget div-->
 								<div>
 									<div class="widget-body">
-										
+										<div id="roll14" style="width:100%; height:300px;"></div>
+										<script type="text/javascript">
+											function loadXMLDoc()
+											{
+												var httpReq = new XMLHttpRequest();
+											    var url = 'http://harypurnomo.com/data.csv';
+
+											    httpReq.open('POST', url, true);
+											    console.log('good');
+
+											    httpReq.setRequestHeader('Access-Control-Allow-Headers', '*');
+											    httpReq.setRequestHeader('Content-type', 'application/ecmascript');
+											    httpReq.setRequestHeader('Access-Control-Allow-Origin', '*');
+											    console.log('ok');
+
+											    httpReq.onreadystatechange = function () {
+											        console.log('test');
+											        if (httpReq.readyState === 4 && httpReq.status === 'success') {
+											            console.log('test');
+											            alert(httpReq.responseText);
+											        }
+											    };
+
+											    httpReq.send();
+											}
+
+											g2 = new Dygraph(document.getElementById("roll14"),loadXMLDoc(),
+									                       {  
+									                          title: 'Padi',
+									                          xlabel: 'Tahun',
+									                          ylabel: 'Dalam Juta Ton',
+									                          legend: 'always',
+									                          labelsSeparateLines: true,
+									                          labelsKMB: true,
+									                          colors: ["red",
+												                       "aqua"],
+									                          stepPlot: false,
+									                          fillGraph: true,
+									                          stackedGraph: false,
+									                          includeZero: true,
+									                          showRangeSelector: true,
+									                          rangeSelectorPlotStrokeColor: '#111111',
+									                          rangeSelectorPlotFillColor: 'lightyellow'
+													});
+										</script>
+									</div>
+								</div>
+								<!-- end widget div -->
+
+							</div>
+							<!-- end widget -->
+
+						</article>
+
+						<article class="col-xs-12 col-sm-6 col-md-6 col-lg-6 sortable-grid ui-sortable">
+							<!-- new widget -->
+							<div class="jarviswidget" id="wid-id-2" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+								<header>
+									<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+									<h2>Padi </h2>
+								</header>
+
+								<!-- widget div-->
+								<div>
+									<div class="widget-body">
+										<div id="roll15" style="width:100%; height:300px;"></div>
+										<script type="text/javascript">
+											g2 = new Dygraph(document.getElementById("roll15"),
+									                      "Tahun,Target,Realisasi\n" +
+									                      "2012,70,30\n" +
+									                      "2013,42,88\n" +
+									                      "2014,88,42\n" +
+									                      "2015,33,37\n" +
+									                      "2016,30,35\n",
+									                       {  
+									                          title: 'Padi',
+									                          xlabel: 'Tahun',
+									                          ylabel: 'Dalam Juta Ton',
+									                          legend: 'always',
+									                          labelsSeparateLines: true,
+									                          labelsKMB: true,
+									                          colors: ["red",
+												                       "aqua"],
+									                          stepPlot: false,
+									                          fillGraph: true,
+									                          stackedGraph: false,
+									                          includeZero: true,
+									                          showRangeSelector: true,
+									                          rangeSelectorPlotStrokeColor: '#111111',
+									                          rangeSelectorPlotFillColor: 'lightyellow'
+													});
+										</script>
+									</div>
+								</div>
+								<!-- end widget div -->
+
+							</div>
+							<!-- end widget -->
+
+						</article>
+
+						<article class="col-xs-12 col-sm-6 col-md-6 col-lg-6 sortable-grid ui-sortable">
+							<!-- new widget -->
+							<div class="jarviswidget" id="wid-id-3" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+								<header>
+									<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+									<h2>Padi </h2>
+								</header>
+
+								<!-- widget div-->
+								<div>
+									<div class="widget-body">
+										<div id="roll16" style="width:100%; height:300px;"></div>
+										<script type="text/javascript">
+											g2 = new Dygraph(document.getElementById("roll16"),
+									                      "Tahun,Target,Realisasi\n" +
+									                      "2012,70,30\n" +
+									                      "2013,42,88\n" +
+									                      "2014,88,42\n" +
+									                      "2015,33,37\n" +
+									                      "2016,30,35\n",
+									                       {  
+									                          title: 'Padi',
+									                          xlabel: 'Tahun',
+									                          ylabel: 'Dalam Juta Ton',
+									                          legend: 'always',
+									                          labelsSeparateLines: true,
+									                          labelsKMB: true,
+									                          colors: ["red",
+												                       "aqua"],
+									                          stepPlot: false,
+									                          fillGraph: true,
+									                          stackedGraph: false,
+									                          includeZero: true,
+									                          showRangeSelector: true,
+									                          rangeSelectorPlotStrokeColor: '#111111',
+									                          rangeSelectorPlotFillColor: 'lightyellow'
+													});
+										</script>
+									</div>
+								</div>
+								<!-- end widget div -->
+
+							</div>
+							<!-- end widget -->
+
+						</article>
+
+						<article class="col-xs-12 col-sm-6 col-md-6 col-lg-6 sortable-grid ui-sortable">
+							<!-- new widget -->
+							<div class="jarviswidget" id="wid-id-4" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+								<header>
+									<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+									<h2>Padi </h2>
+								</header>
+
+								<!-- widget div-->
+								<div>
+									<div class="widget-body">
+										<div id="roll17" style="width:100%; height:300px;"></div>
+										<script type="text/javascript">
+											g2 = new Dygraph(document.getElementById("roll17"),
+									                      "Tahun,Target,Realisasi\n" +
+									                      "2012,70,30\n" +
+									                      "2013,42,88\n" +
+									                      "2014,88,42\n" +
+									                      "2015,33,37\n" +
+									                      "2016,30,35\n",
+									                       {  
+									                          title: 'Padi',
+									                          xlabel: 'Tahun',
+									                          ylabel: 'Dalam Juta Ton',
+									                          legend: 'always',
+									                          labelsSeparateLines: true,
+									                          labelsKMB: true,
+									                          colors: ["red",
+												                       "aqua"],
+									                          stepPlot: false,
+									                          fillGraph: true,
+									                          stackedGraph: false,
+									                          includeZero: true,
+									                          showRangeSelector: true,
+									                          rangeSelectorPlotStrokeColor: '#111111',
+									                          rangeSelectorPlotFillColor: 'lightyellow'
+													});
+										</script>
 									</div>
 								</div>
 								<!-- end widget div -->
@@ -504,6 +731,7 @@
 		<script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
 		<script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
 		<script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+		
 		
 		<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
 		<script src="js/plugin/flot/jquery.flot.cust.min.js"></script>
